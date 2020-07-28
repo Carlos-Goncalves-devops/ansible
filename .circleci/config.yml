@@ -1,0 +1,27 @@
+version: 2.1
+
+jobs:
+  save_hello_world_output:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - inventory
+
+  print_output_file:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: cat ~/inventory.txt
+
+workflows:
+  my_workflow:
+    jobs:
+      - save_inventory
+      - print_inventory:
+          requires:
+            - save_hello_world_output
