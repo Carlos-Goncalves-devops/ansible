@@ -5,6 +5,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
+      - checkout
       - persist_to_workspace:
           root: .
           paths:
@@ -14,9 +15,10 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
+      - checkout
       - attach_workspace:
           at: .
-      - run: cat ~/inventory
+      - run: cat ./inventory
 
 workflows:
   my_workflow:
