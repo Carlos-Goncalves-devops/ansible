@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  save_hello_world_output:
+  save_inventory:
     docker:
       - image: circleci/node:13.8.0
     steps:
@@ -10,7 +10,7 @@ jobs:
           paths:
             - inventory
 
-  print_output_file:
+  print_inventory:
     docker:
       - image: circleci/node:13.8.0
     steps:
