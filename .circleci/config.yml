@@ -24,4 +24,4 @@ workflows:
       - save_inventory
       - print_inventory:
           requires:
-            - save_hello_world_output
+            - save_inventory
