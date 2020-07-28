@@ -16,7 +16,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
-      - run: cat ~/inventory.txt
+      - run: cat ~/inventory
 
 workflows:
   my_workflow:
