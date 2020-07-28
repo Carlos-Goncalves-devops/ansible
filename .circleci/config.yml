@@ -5,6 +5,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
+      - run: cp ./inventory ~/output.txt
       - persist_to_workspace:
           root: ~/
           paths:
